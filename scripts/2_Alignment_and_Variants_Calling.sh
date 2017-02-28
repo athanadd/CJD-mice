@@ -1,6 +1,6 @@
 #The alignment was performed using tophat2 (https://ccb.jhu.edu/software/tophat/index.shtml):
 
-tophat genes.gtf -g 1 --no-novel-indels --no-coverage-search --transcriptome-index=mm10/transcriptome_data --read-mismatches 3 --read-edit-dist 3 --read-realign-edit-dist 0 -a 12 -m 1 -o output_directory mm10/Bowtie2Index/genome input_file
+tophat genes.gtf -g 1 --no-novel-indels --no-coverage-search --transcriptome-index=mm10/transcriptome_data --read-mismatches 3 --segment-length 20 --read-edit-dist 3 --read-realign-edit-dist 0 -a 12 -m 1 -o output_directory mm10/Bowtie2Index/genome input_file
 
 #The bam files were sorted and indexed using samtools (http://samtools.sourceforge.net/):
 
@@ -13,7 +13,7 @@ python REDItoolBlatCorrection.py -i input_bam_file -o output_directory -V -f ref
 
 #The main analysis was performed by REDItool Denovo, a script of the REDItools suite:
 
-python REDItoolDenovo.py -i input_bam_file -o output_directory snps_file -p -f reference_fasta_file -e -l -u -B blat_correction_directory -W splice_sites
+python REDItoolDenovo.py -i input_bam_file -o output_directory snps_file -f reference_fasta_file -e -l -u -B blat_correction_directory -W splice_sites
 
 #The snps and splice_sites files were prepared according to the official REDItools documentation.
 
