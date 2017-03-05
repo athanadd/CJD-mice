@@ -13,4 +13,4 @@ The workflow can be separated in 4 sections:
 2. Alignment and Variants Calling
 3. Strand Correction, Filtering and Differential RNA Editing
 
-The first two steps are carried out by Bash scripts, while the others are executed entirely in R.
+The first two steps are carried out by Bash scripts, while the other is executed entirely in R.
